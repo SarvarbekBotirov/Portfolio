@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="사르바르벡 보티로프 — 공급망 연구자 · 글로벌 비즈니스 인재">
+<title>사르바르벡 보티로프 — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --red:    #e63b45;
+  --black:  #0d0d0d;
+  --white:  #ffffff;
+  --gray:   #888;
+  --lt:     #f5f5f5;
+  --border: #e0e0e0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  color: var(--black); background: var(--white);
+  overflow-x: hidden; line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+
+html[lang="ko"] .en { display: none !important; }
+html[lang="en"] .ko { display: none !important; }
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--white); border-bottom: 2px solid var(--black);
+  height: 56px; display: flex; align-items: center; padding: 0 48px; gap: 0;
+}
+.nav-logo {
+  font-weight: 900; font-size: 18px; color: var(--black);
+  letter-spacing: -0.5px; margin-right: auto;
+}
+.nav-logo em { color: var(--red); font-style: normal; }
+.nav-menu { display: flex; list-style: none; gap: 32px; margin-right: 28px; }
+.nav-menu a {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gray); transition: color .15s;
+}
+.nav-menu a:hover, .nav-menu a.active { color: var(--red); }
+.nav-right { display: flex; align-items: center; gap: 6px; }
+.lang-btn {
+  font-size: 11px; font-weight: 800; letter-spacing: 1px;
+  color: var(--black); background: none; border: 2px solid var(--black);
+  padding: 4px 10px; cursor: pointer; font-family: inherit;
+  transition: all .15s; margin-right: 8px;
+}
+.lang-btn:hover { background: var(--black); color: var(--white); }
+.nav-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: 56px 48px 60px;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 56px;
+  align-items: center;
+  border-left: 6px solid var(--red);
+  position: relative;
+}
+.hero-left { display: flex; flex-direction: column; justify-content: center; }
+
+/* Photo */
+.hero-photo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hero-photo {
+  width: 240px; height: 290px;
+  object-fit: cover; object-position: top center;
+  border: 3px solid var(--black);
+  display: block;
+}
+.hero-photo-caption {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+  margin-top: 8px; text-align: center;
+}
+
+/* Hero icon buttons */
+.hero-icons { display: flex; gap: 6px; align-items: center; margin-top: 24px; }
+.hicon {
+  width: 38px; height: 38px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 2px solid var(--black); color: var(--black);
+  transition: all .15s;
+}
+.hicon svg { width: 16px; height: 16px; }
+.hicon:hover { background: var(--black); color: var(--white); }
+.hicon.cr:hover { background: var(--red); border-color: var(--red); color: var(--white); }
+.hicon-sep { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
+.hero-eyebrow {
+  font-size: 11px; font-weight: 800; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--red); margin-bottom: 28px;
+}
+.hero-name {
+  font-size: clamp(58px, 10vw, 112px);
+  font-weight: 900; color: var(--black);
+  line-height: 0.92; letter-spacing: -4px;
+  margin-bottom: 36px;
+}
+.hero-name .accent { color: var(--red); }
+.hero-tagline {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--gray); line-height: 1.75; font-weight: 400;
+  max-width: 500px; margin-bottom: 36px;
+}
+.hero-tagline strong { color: var(--black); font-weight: 700; }
+
+/* Role tags (static) */
+.role-row { display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+.reel-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+  padding-top: 8px; white-space: nowrap;
+}
+.role-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.role-tag {
+  font-size: 12px; font-weight: 700; color: var(--black);
+  border: 2px solid var(--black); padding: 5px 14px;
+  letter-spacing: .2px; transition: all .15s;
+}
+.role-tag:hover { background: var(--black); color: var(--white); }
+.role-tag.primary { background: var(--red); border-color: var(--red); color: var(--white); }
+.role-tag.primary:hover { background: #c0292f; border-color: #c0292f; }
+
+/* ── SECTIONS ── */
+.section { padding: 80px 48px; border-top: 2px solid var(--black); }
+.section.alt { background: var(--lt); }
+
+.sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 52px; }
+.sec-num { font-size: 11px; font-weight: 800; color: var(--red); letter-spacing: 2px; }
+.sec-title {
+  font-size: clamp(26px, 4.5vw, 46px);
+  font-weight: 900; letter-spacing: -2px; color: var(--black); line-height: 1;
+}
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.about-text p { font-size: 15px; line-height: 1.9; color: #333; margin-bottom: 16px; }
+.about-text p strong { color: var(--black); }
+
+.lang-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 2px solid var(--black); margin-top: 28px;
+}
+.lang-item { padding: 14px 12px; border-right: 2px solid var(--black); }
+.lang-item:last-child { border-right: none; }
+.lang-flag { font-size: 18px; margin-bottom: 5px; }
+.lang-name { font-size: 12.5px; font-weight: 800; color: var(--black); }
+.lang-level { font-size: 10px; color: var(--gray); margin-top: 1px; }
+.lang-score { font-size: 10px; font-weight: 700; color: var(--red); margin-top: 4px; }
+
+.skills-col { }
+.sg { margin-bottom: 24px; }
+.sg-title {
+  font-size: 10px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--red);
+  margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--border);
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 12px; font-weight: 600; color: var(--black);
+  border: 1.5px solid var(--border); padding: 4px 10px;
+  border-radius: 0; transition: all .15s;
+}
+.tag:hover { border-color: var(--black); background: var(--black); color: var(--white); }
+
+/* Tool icon chips */
+.tools-grid { display: flex; flex-wrap: wrap; gap: 7px; }
+.tool-chip {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 5px; border: 1.5px solid var(--border);
+  padding: 10px 12px; min-width: 66px;
+  transition: all .15s; cursor: default;
+}
+.tool-chip:hover { border-color: var(--black); background: var(--lt); }
+.tool-chip svg { width: 20px; height: 20px; fill: none; stroke: var(--black); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tool-chip svg.si { fill: var(--black); stroke: none; stroke-width: 0; }
+.tool-chip img { width: 20px; height: 20px; object-fit: contain; }
+.tool-chip span { font-size: 10px; font-weight: 700; letter-spacing: .2px; color: var(--black); }
+.tool-chip:hover img { filter: invert(1); }
+.tool-chip:hover svg { stroke: var(--white); }
+.tool-chip:hover svg.si { fill: var(--white); stroke: none; }
+
+/* ── TIMELINE ── */
+.tl {
+  display: grid; grid-template-columns: 150px 1fr;
+  gap: 36px; padding: 28px 0; border-bottom: 1px solid var(--border);
+}
+.tl:last-child { border-bottom: none; }
+.tl-period { font-size: 11px; font-weight: 800; color: var(--red); letter-spacing: .3px; padding-top: 2px; }
+.tl-role { font-size: 17px; font-weight: 900; color: var(--black); letter-spacing: -.5px; margin-bottom: 3px; }
+.tl-org { font-size: 13px; color: var(--gray); font-weight: 500; margin-bottom: 10px; }
+.tl-desc { font-size: 13.5px; color: #444; line-height: 1.8; }
+
+/* ── PROJECTS ── */
+.proj-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 2px solid var(--black);
+}
+.proj-card {
+  padding: 28px 28px 24px;
+  border-right: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  display: flex; flex-direction: column;
+}
+.proj-card:nth-child(2) { border-right: none; }
+.proj-card:nth-child(3) { grid-column: 1 / -1; border-right: none; border-bottom: none; }
+
+.proj-badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--red); margin-bottom: 12px;
+}
+.proj-title {
+  font-size: 19px; font-weight: 900; color: var(--black);
+  letter-spacing: -.5px; margin-bottom: 10px; line-height: 1.2;
+}
+.proj-desc {
+  font-size: 13px; color: #555; line-height: 1.85;
+  margin-bottom: 16px; flex: 1;
+}
+.proj-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+.stag {
+  font-size: 10px; font-weight: 700; letter-spacing: .3px;
+  color: var(--gray); border: 1px solid var(--border); padding: 2px 8px;
+}
+.proj-link { font-size: 12px; font-weight: 800; color: var(--red); }
+.proj-link:hover { text-decoration: underline; }
+
+.proj-card.dark { background: var(--black); }
+.proj-card.dark .proj-title { color: var(--white); }
+.proj-card.dark .proj-desc  { color: rgba(255,255,255,.55); }
+.proj-card.dark .stag { color: rgba(255,255,255,.4); border-color: rgba(255,255,255,.15); }
+
+/* ── EDU + AWARDS ── */
+.ea-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.sub-kicker {
+  font-size: 10px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--red); margin-bottom: 20px;
+}
+.edu-item { padding: 18px 0; border-bottom: 1px solid var(--border); }
+.edu-item:last-child { border-bottom: none; }
+.edu-degree { font-size: 15px; font-weight: 800; color: var(--black); margin-bottom: 3px; }
+.edu-school { font-size: 13px; color: var(--gray); margin-bottom: 8px; }
+.edu-metas { display: flex; gap: 6px; }
+.em { font-size: 10px; font-weight: 700; padding: 2px 8px; letter-spacing: .3px; }
+.em-red { background: var(--red); color: var(--white); }
+.em-bdr { border: 1.5px solid var(--black); color: var(--black); }
+
+.aw-item { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.aw-item:last-child { border-bottom: none; }
+.aw-year { font-size: 10px; font-weight: 800; color: var(--red); letter-spacing: .3px; white-space: nowrap; min-width: 36px; padding-top: 2px; }
+.aw-name { font-size: 13.5px; font-weight: 700; color: var(--black); }
+.aw-org  { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+/* ── CONTACT ── */
+.contact-inner { max-width: 800px; }
+.contact-big {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900; color: var(--black);
+  letter-spacing: -3px; line-height: 0.9;
+  margin-bottom: 28px;
+}
+.contact-big em { color: var(--red); font-style: normal; }
+.contact-desc { font-size: 15px; color: var(--gray); line-height: 1.75; margin-bottom: 36px; max-width: 460px; }
+.contact-links { display: flex; flex-wrap: wrap; }
+.clink {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 2px solid var(--black); padding: 13px 22px;
+  font-size: 13px; font-weight: 700; color: var(--black);
+  margin-right: -2px; margin-bottom: -2px;
+  transition: all .15s;
+}
+.clink:hover { background: var(--black); color: var(--white); z-index: 1; position: relative; }
+.clink.cr:hover { background: var(--red); border-color: var(--red); color: var(--white); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black); color: rgba(255,255,255,.4);
+  padding: 24px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; font-weight: 500; letter-spacing: .3px;
+  border-top: 4px solid var(--red);
+}
+footer strong { color: rgba(255,255,255,.7); font-weight: 700; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .1s; }
+.reveal.d2 { transition-delay: .2s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav { padding: 0 20px; }
+  .nav-menu { display: none; }
+
+  /* Hero: single column, photo on top centered */
+  .hero {
+    padding: 72px 24px 52px;
+    border-left: 4px solid var(--red);
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: unset;
+  }
+  .hero-photo-wrap {
+    order: -1;                    /* float to top */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    margin-top: 0;
+  }
+  .hero-photo {
+    width: 160px;
+    height: 200px;
+    border: 3px solid var(--black);
+  }
+  .hero-photo-caption { margin-top: 8px; }
+  .hero-name {
+    font-size: clamp(52px, 14vw, 80px);
+    letter-spacing: -2px;
+  }
+  .hero-tagline { font-size: 14px; }
+  .role-row { flex-wrap: wrap; gap: 8px; }
+
+  /* Sections */
+  .section { padding: 56px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .lang-row { grid-template-columns: 1fr 1fr; }
+  .lang-item:nth-child(2) { border-right: none; }
+  .lang-item:nth-child(3), .lang-item:nth-child(4) { border-top: 2px solid var(--black); }
+  .tl { grid-template-columns: 1fr; gap: 8px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-card { border-right: 2px solid var(--black) !important; border-bottom: 2px solid var(--black) !important; }
+  .proj-card:last-child { border-bottom: none !important; }
+  .ea-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-big { letter-spacing: -2px; }
+  .contact-links { flex-direction: column; }
+  .clink { justify-content: center; }
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+  .hero-photo { width: 140px; height: 175px; }
+  .hero-name { font-size: clamp(44px, 16vw, 68px); }
+  .tools-grid { grid-template-columns: repeat(3, 1fr); }
+  .section-num { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">S<em>.</em>B</a>
+  <ul class="nav-menu">
+    <li><a href="#about"><span class="ko">소개</span><span class="en">About</span></a></li>
+    <li><a href="#experience"><span class="ko">경력</span><span class="en">Experience</span></a></li>
+    <li><a href="#projects"><span class="ko">프로젝트</span><span class="en">Projects</span></a></li>
+    <li><a href="#activities"><span class="ko">활동</span><span class="en">Activities</span></a></li>
+    <li><a href="#education"><span class="ko">학력</span><span class="en">Education</span></a></li>
+    <li><a href="#contact"><span class="ko">연락</span><span class="en">Contact</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <!-- LEFT: text content -->
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">
+      <span class="ko">사르바르벡 보티로프 — 포트폴리오</span>
+      <span class="en">Sarvarbek Botirov — Portfolio</span>
+    </div>
+    <h1 class="hero-name reveal d1">
+      <span class="ko">사르바르벡<br><span class="accent">보티로프</span></span>
+      <span class="en">Sarvar<span class="accent">bek</span><br>Botirov</span>
+    </h1>
+    <p class="hero-tagline reveal d1">
+      <strong>Eager to learn, solve problems, and create value.</strong><br>
+      <span class="ko">우즈베키스탄 출신 · 인하대학교 아태물류 학사 · 연세대학교 산업공학 석사</span>
+      <span class="en">From Uzbekistan · Inha Univ. BSc Logistics · Yonsei Univ. MSc IE</span>
+    </p>
+    <div class="role-row reveal d2">
+      <span class="reel-label ko">관심 직무</span>
+      <span class="reel-label en">OPEN TO</span>
+      <div class="role-tags">
+        <span class="role-tag primary"><span class="ko">해외영업</span><span class="en">Global Sales</span></span>
+        <span class="role-tag"><span class="ko">사업계획</span><span class="en">Business Planning</span></span>
+        <span class="role-tag"><span class="ko">물류</span><span class="en">Logistics</span></span>
+        <span class="role-tag"><span class="ko">무역</span><span class="en">Trade</span></span>
+      </div>
+    </div>
+    <!-- Icon buttons below reel -->
+    <div class="hero-icons reveal d2">
+      <a href="https://github.com/SarvarbekBotirov" target="_blank" class="hicon" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/sarvarbek-botirov" target="_blank" class="hicon" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="mailto:Sarvarb808@gmail.com" class="hicon cr" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="0"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+      <div class="hicon-sep"></div>
+      <a href="resume-ko.pdf" download class="hicon cr ko" title="이력서 PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+      </a>
+      <a href="resume-en.pdf" download class="hicon cr en" title="Resume PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- RIGHT: photo -->
+  <div class="hero-photo-wrap reveal d2">
+    <img src="photo.JPG" alt="사르바르벡 보티로프" class="hero-photo">
+    <div class="hero-photo-caption ko">사르바르벡 보티로프</div>
+    <div class="hero-photo-caption en">Sarvarbek Botirov</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="sec-head reveal">
+    <span class="sec-num">01 —</span>
+    <h2 class="sec-title"><span class="ko">소개</span><span class="en">About</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p class="ko"><strong>생긴 건 늑대처럼 보이지만, 성격은 개미처럼 성실한 사람입니다.</strong></p>
+      <p class="ko">서류 하나, 파트너 연락 하나 허투루 넘기지 않는 것이 제 일하는 방식입니다. 인하대학교에서 물류를 공부하며 이론을 다지는 동시에, 가족 사업에서 해외 파트너와 직접 발주·협상을 담당하며 파트너 관리 실무를 몸으로 익혔습니다. 이 과정에서 기른 가장 큰 힘은, <strong>맡은 일은 끝까지 꼼꼼하게 처리하고</strong> 파트너와 신뢰를 쌓아 문제를 풀어내는 능력입니다.</p>
+      <p class="ko">한국에 온 것은 단순히 문화가 좋아서가 아닙니다. 한국 회사들이 빠르고 정확하게 일하는 방식을 보고, 그 환경에서 일하고 싶어 왔습니다. 지금은 연세대학교에서 공급망을 더 깊이 공부하면서, 다양한 나라·문화권의 사람들과 소통해 온 경험을 바탕으로 <strong>화주와 파트너를 잇는 글로벌 물류·무역 전문가</strong>를 목표로 하고 있습니다.</p>
+      <p class="en"><strong>I may look like a wolf, but I work like an ant.</strong></p>
+      <p class="en">I don't miss a single document or a single follow-up. I studied logistics at Inha University while running real procurement negotiations and <strong>overseas partner management</strong> for my family's trade business — learning to build trust with partners and see every task through to the end.</p>
+      <p class="en">I didn't come to Korea just because I liked the culture. I came because I saw how Korean companies work — fast, precise, no excuses — and I wanted to be part of that. Now studying supply chain at Yonsei University, I bring <strong>multicultural communication</strong> and an uncompromising work ethic to global logistics and trade.</p>
+      <div class="lang-row">
+        <div class="lang-item"><div class="lang-flag">🇰🇷</div><div class="lang-name">한국어</div><div class="lang-level ko">최고급</div><div class="lang-level en">Advanced</div><div class="lang-score">TOPIK 6</div></div>
+        <div class="lang-item"><div class="lang-flag">🇺🇸</div><div class="lang-name">English</div><div class="lang-level ko">고급</div><div class="lang-level en">Advanced</div><div class="lang-score">TOEIC 930</div></div>
+        <div class="lang-item"><div class="lang-flag">🇺🇿</div><div class="lang-name">O'zbek</div><div class="lang-level ko">원어민</div><div class="lang-level en">Native</div><div class="lang-score">&nbsp;</div></div>
+        <div class="lang-item"><div class="lang-flag">🇷🇺</div><div class="lang-name">Русский</div><div class="lang-level ko">청독해</div><div class="lang-level en">Reading</div><div class="lang-score">&nbsp;</div></div>
+      </div>
+    </div>
+    <div class="skills-col reveal d1">
+      <div class="sg">
+        <div class="sg-title ko">툴</div><div class="sg-title en">TOOLS</div>
+        <div class="tools-grid">
+          <!-- Python -->
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/python/0d0d0d" alt="Python">
+            <span>Python</span>
+          </div>
+          <!-- SQL -->
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/postgresql/0d0d0d" alt="SQL">
+            <span>SQL</span>
+          </div>
+          <!-- Pandas -->
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/pandas/0d0d0d" alt="Pandas">
+            <span>Pandas</span>
+          </div>
+          <!-- Gurobi – no brand icon, use clean network SVG -->
+          <div class="tool-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none!important;stroke:var(--black)"><circle cx="18" cy="5" r="2.5"/><circle cx="5" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><line x1="7.4" y1="13.4" x2="15.6" y2="17.6"/><line x1="15.6" y1="6.4" x2="7.4" y2="10.6"/></svg>
+            <span>Gurobi</span>
+          </div>
+          <!-- Mathematica / Wolfram -->
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/wolfram/0d0d0d" alt="Mathematica">
+            <span>Mathematica</span>
+          </div>
+          <!-- Excel -->
+          <div class="tool-chip">
+            <svg viewBox="0 0 24 24" class="si"><path d="M21.17 1.17H2.83A1.66 1.66 0 0 0 1.17 2.83v18.34a1.66 1.66 0 0 0 1.66 1.66h18.34a1.66 1.66 0 0 0 1.66-1.66V2.83a1.66 1.66 0 0 0-1.66-1.66zM14 16.5l-2-3-2 3H8l3-4.5L8 7.5h2l2 3 2-3h2l-3 4.5 3 4.5z"/></svg>
+            <span>Excel</span>
+          </div>
+          <!-- PowerPoint -->
+          <div class="tool-chip">
+            <svg viewBox="0 0 24 24" class="si"><path d="M21.17 1.17H2.83A1.66 1.66 0 0 0 1.17 2.83v18.34a1.66 1.66 0 0 0 1.66 1.66h18.34a1.66 1.66 0 0 0 1.66-1.66V2.83a1.66 1.66 0 0 0-1.66-1.66zM13 13h-3v3H8V8h5a3 3 0 0 1 0 6z"/></svg>
+            <span>PowerPoint</span>
+          </div>
+          <!-- Slack -->
+          <div class="tool-chip">
+            <svg viewBox="0 0 24 24" class="si"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zm2.521-10.123a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.527 2.527 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+            <span>Slack</span>
+          </div>
+          <!-- Notion -->
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/notion/0d0d0d" alt="Notion">
+            <span>Notion</span>
+          </div>
+        </div>
+      </div>
+      <div class="sg"><div class="sg-title ko">자격증</div><div class="sg-title en">CERTIFICATIONS</div><div class="tags"><span class="tag">AWS Cloud Practitioner</span><span class="tag">ML – DeepLearning.AI</span><span class="tag">Data Engineer – DataCamp</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section alt" id="experience">
+  <div class="sec-head reveal">
+    <span class="sec-num">02 —</span>
+    <h2 class="sec-title"><span class="ko">경력</span><span class="en">Experience</span></h2>
+  </div>
+  <div class="reveal">
+    <div class="tl">
+      <div><div class="tl-period ko">2024.03 — 현재</div><div class="tl-period en">2024 — Present</div></div>
+      <div>
+        <div class="tl-role ko">연구조교</div><div class="tl-role en">Research Assistant</div>
+        <div class="tl-org ko">연세대학교 SMOM 연구실 · 서울</div><div class="tl-org en">Yonsei University SMOM Lab · Seoul</div>
+        <div class="tl-desc ko">공급망 최적화, AI 기반 데이터 분석, 게임이론 모델링 연구. 탄소배출 정책 + 수요 불확실성 통합 최적화 모델 개발. Python · Gurobi · Wolfram Mathematica.</div>
+        <div class="tl-desc en">Researching supply chain optimization, AI-driven analytics, and game-theoretic modeling. Building integrated models for carbon emission policy and demand uncertainty.</div>
+      </div>
+    </div>
+    <div class="tl">
+      <div><div class="tl-period">2022.09 — 2023.01</div></div>
+      <div>
+        <div class="tl-role ko">행정조교</div><div class="tl-role en">Administrative Assistant</div>
+        <div class="tl-org ko">인하대학교 입학처 · 인천</div><div class="tl-org en">Inha University Admissions · Incheon</div>
+        <div class="tl-desc ko">200명+ 지원자 데이터 Excel 관리. 한국어·영어·우즈베크어 3개 국어 서류 처리 및 민원 대응.</div>
+        <div class="tl-desc en">Managed 200+ applicant records in Excel. Handled documents and inquiries in Korean, English, and Uzbek.</div>
+      </div>
+    </div>
+    <div class="tl">
+      <div><div class="tl-period ko">2020 — 2022 방학</div><div class="tl-period en">2020 — 2022 Seasonal</div></div>
+      <div>
+        <div class="tl-role ko">생산 아르바이트</div><div class="tl-role en">Production Line Worker</div>
+        <div class="tl-org ko">신세계푸드 식품 제조공장 (스타벅스 납품)</div><div class="tl-org en">Shinsegae Food Plant (Starbucks supply)</div>
+        <div class="tl-desc ko">식품 제조 라인 생산 업무. 전공 수업의 제조 공정·물류 원칙을 현장에서 직접 체득.</div>
+        <div class="tl-desc en">Production line work. Directly observed manufacturing and logistics principles from coursework in a real factory environment.</div>
+      </div>
+    </div>
+    <div class="tl">
+      <div><div class="tl-period ko">2019 — 2020 방학</div><div class="tl-period en">2019 — 2020 Seasonal</div></div>
+      <div>
+        <div class="tl-role ko">택배 분류 아르바이트</div><div class="tl-role en">Parcel Sorter</div>
+        <div class="tl-org ko">택배 물류센터</div><div class="tl-org en">Parcel Logistics Center</div>
+        <div class="tl-desc ko">배송지별 분류 업무. 배송 순서 파악해 사전 정렬을 자발적으로 도입. 라스트마일 물류 현장 직접 경험.</div>
+        <div class="tl-desc en">Sorted parcels by zone. Self-initiated pre-sorting by delivery route — hands-on last-mile logistics experience.</div>
+      </div>
+    </div>
+    <div class="tl">
+      <div><div class="tl-period">2016 — 2020</div></div>
+      <div>
+        <div class="tl-role ko">영업·구매 담당</div><div class="tl-role en">Sales & Procurement</div>
+        <div class="tl-org ko">가족 원단 사업체 · 타슈켄트, 우즈베키스탄</div><div class="tl-org en">Family Textile Business · Tashkent, Uzbekistan</div>
+        <div class="tl-desc ko">중국 공급업체와 발주·납기 협상·서류 관리 직접 담당. 신뢰 구축으로 외상 거래 성사. 다국어 무역 커뮤니케이션.</div>
+        <div class="tl-desc en">Handled procurement negotiations, delivery terms, and trade documentation with Chinese suppliers. Built trust-based relationships to secure credit terms.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="sec-head reveal">
+    <span class="sec-num">03 —</span>
+    <h2 class="sec-title"><span class="ko">프로젝트</span><span class="en">Projects</span></h2>
+  </div>
+  <div class="proj-grid reveal">
+
+    <div class="proj-card dark">
+      <div class="proj-badge">🟢 LIVE</div>
+      <div class="proj-title" style="color:#fff;">SupplyLens</div>
+      <p class="proj-desc ko">AI 기반 공급망 리스크 인텔리전스. 13개 글로벌 뉴스 소스를 6시간마다 모니터링 → Claude AI 분석 → 구매 담당자용 리스크 리포트 자동 생성. 하루 운영비 ₩100 미만.</p>
+      <p class="proj-desc en">AI-powered supply chain risk intelligence. Monitors 13 global news sources every 6h, analyzes with Claude AI, auto-generates procurement risk reports. Under $0.10/day to run.</p>
+      <div class="proj-stack"><span class="stag">React</span><span class="stag">Node.js</span><span class="stag">Claude API</span><span class="stag">Vercel</span></div>
+      <a href="https://supplylens-lilac.vercel.app" target="_blank" class="proj-link">supplylens-lilac.vercel.app →</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-badge ko">연구 논문</div><div class="proj-badge en">RESEARCH</div>
+      <div class="proj-title ko">확률적 물물교환 모델<br>소매 공급망 수요 분석</div>
+      <div class="proj-title en">Stochastic Barter Model<br>Retail Supply Chain</div>
+      <p class="proj-desc ko">소매 공급망의 수요 변동성 확률적 최적화 모델링. Python·Mathematica 활용 민감도 분석. 연세대 SMOM Lab 단독 연구.</p>
+      <p class="proj-desc en">Stochastic optimization of retail supply chain demand variability. Sensitivity analysis with Python & Mathematica. Independent research, Yonsei SMOM Lab.</p>
+      <div class="proj-stack"><span class="stag">Python</span><span class="stag">Mathematica</span><span class="stag">Optimization</span></div>
+      <span class="proj-link">Yonsei SMOM Lab · 2025</span>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-badge ko">석사 논문 (진행중)</div><div class="proj-badge en">THESIS (IN PROGRESS)</div>
+      <div class="proj-title ko">탄소정책 + 게임이론<br>통합 공급망 최적화</div>
+      <div class="proj-title en">Carbon Policy + Game Theory<br>Supply Chain Model</div>
+      <p class="proj-desc ko">녹색 투자, 탄소배출 정책, 게임이론, 수요 불확실성 통합 최적화 모델. 석사 논문 진행 중.</p>
+      <p class="proj-desc en">Integrating green investment, carbon emission policy, game-theoretic optimization, and demand uncertainty. Master's thesis in progress.</p>
+      <div class="proj-stack"><span class="stag">Game Theory</span><span class="stag">Gurobi</span><span class="stag">Carbon Policy</span></div>
+      <span class="proj-link ko">Yonsei SMOM Lab · 2026</span><span class="proj-link en">Yonsei SMOM Lab · 2026</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="section" id="activities">
+  <div class="sec-head reveal">
+    <span class="sec-num">04 —</span>
+    <h2 class="sec-title"><span class="ko">활동</span><span class="en">Activities</span></h2>
+  </div>
+  <div class="reveal">
+
+    <div class="tl">
+      <div>
+        <div class="tl-period ko">2025.06 — 2025.08</div>
+        <div class="tl-period en">Jun — Aug 2025</div>
+      </div>
+      <div>
+        <div class="tl-role ko">K-커리어마스터 3기</div><div class="tl-role en">K-Career Master Program (Cohort 3)</div>
+        <div class="tl-org ko">한국무역협회 (KITA) · 무역아카데미</div><div class="tl-org en">Korea International Trade Association (KITA)</div>
+        <div class="tl-desc ko">11주 · 약 270시간 집중 과정. 무역실무 전 과정(무역계약·수출입대금결제·통관·FTA·물류·무역서식), 해외영업·디지털 마케팅(Google Analytics·퍼포먼스·그로스 마케팅), 글로벌 e커머스(아마존 플랫폼·AI 기반 소싱), 데이터분석·웹크롤링, 기업연계 최종 프로젝트 수행.</div>
+        <div class="tl-desc en">11-week (~270hr) intensive program. Covered full trade operations (contracts, payment, customs, FTA, logistics, trade forms), global sales & digital marketing (Google Analytics, performance/growth marketing), e-commerce (Amazon, AI-powered sourcing), data analysis, and a corporate-linked capstone project.</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div>
+        <div class="tl-period">2025.08 — 2025.11</div>
+      </div>
+      <div>
+        <div class="tl-role ko">무역전문가 과정</div><div class="tl-role en">Trade Specialist Program</div>
+        <div class="tl-org ko">K-Export Academy · 부산외국어대학교</div><div class="tl-org en">K-Export Academy · Pusan Univ. of Foreign Studies</div>
+        <div class="tl-desc ko">200시간 과정 이수. 수출입 실무, FTA 활용, 글로벌 시장조사, 공급망 리스크 평가 등 무역 전 과정 학습.</div>
+        <div class="tl-desc en">Completed 200-hour program covering export/import operations, FTA utilization, global market intelligence, and supply chain risk assessment.</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div>
+        <div class="tl-period">2025.08</div>
+      </div>
+      <div>
+        <div class="tl-role ko">LG Science Park 탐방 프로그램</div><div class="tl-role en">LG Science Park Discovery Tour</div>
+        <div class="tl-org">LG</div>
+        <div class="tl-desc ko">국제 STEM 대학원생 중 선발. LG의 혁신 기술 및 스마트 제조 현장 탐방.</div>
+        <div class="tl-desc en">Selected among international STEM graduate students for LG's innovation and smart manufacturing discovery program.</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div>
+        <div class="tl-period">2024.07</div>
+      </div>
+      <div>
+        <div class="tl-role ko">Samsung C&T 디스커버 프로그램</div><div class="tl-role en">Samsung C&T Discover Program</div>
+        <div class="tl-org ko">삼성물산 (Samsung C&T)</div><div class="tl-org en">Samsung C&T</div>
+        <div class="tl-desc ko">5일간 기업 탐방 프로그램 선발. NRD-K 첨단 제조·테스트 시설, 삼성안전교육센터, 삼성전자 본사, FAB 클린룸 직접 방문. 삼성 사내대학에서 기업 핵심가치·전략비전·조달운영 심화 세션 참여.</div>
+        <div class="tl-desc en">Selected for 5-day corporate discovery program. Visited NRD-K high-tech manufacturing facility, Samsung Safety Academy, Samsung Electronics HQ, and FAB Clean Room. Attended Samsung University sessions on core values, strategic vision, and procurement operations in semiconductor manufacturing.</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div>
+        <div class="tl-period">2022.08 — 2023.02</div>
+      </div>
+      <div>
+        <div class="tl-role ko">국제학생회 회장</div><div class="tl-role en">International Student Association President</div>
+        <div class="tl-org ko">인하대학교</div><div class="tl-org en">Inha University</div>
+        <div class="tl-desc ko">17개국 300명+ 외국인 학생 대표. 공통 문제를 우선순위화하여 학교 행정처와 협상, 실질적 개선 이끌어냄.</div>
+        <div class="tl-desc en">Represented 300+ international students from 17 countries. Prioritized shared issues and negotiated with university administration for tangible improvements.</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div>
+        <div class="tl-period">2022.08 — 2023.03</div>
+      </div>
+      <div>
+        <div class="tl-role ko">버디 프로그램 멘토</div><div class="tl-role en">Buddy Program Mentor</div>
+        <div class="tl-org ko">인하대학교</div><div class="tl-org en">Inha University</div>
+        <div class="tl-desc ko">신입 교환학생의 학업 및 문화 적응 지원. 다국적 환경에서 소통·문제해결 역량 강화.</div>
+        <div class="tl-desc en">Supported new exchange students with academic and cultural adaptation. Strengthened multicultural communication and problem-solving skills.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION + AWARDS -->
+<section class="section alt" id="education">
+  <div class="sec-head reveal">
+    <span class="sec-num">05 —</span>
+    <h2 class="sec-title"><span class="ko">학력 & 수상</span><span class="en">Education & Awards</span></h2>
+  </div>
+  <div class="ea-grid">
+    <div class="reveal">
+      <div class="sub-kicker ko">학력사항</div><div class="sub-kicker en">EDUCATION</div>
+      <div class="edu-item">
+        <div class="edu-degree ko">일반대학원 산업공학과</div><div class="edu-degree en">MSc, Industrial Engineering</div>
+        <div class="edu-school ko">연세대학교 · 서울 · 2024 – 현재</div><div class="edu-school en">Yonsei University · Seoul · 2024 – Present</div>
+        <div class="edu-metas"><span class="em em-red">GPA 4.05 / 4.5</span><span class="em em-bdr">SMOM Lab</span></div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree ko">아태물류학부 (물류학 전공)</div><div class="edu-degree en">BSc, Asia-Pacific Logistics</div>
+        <div class="edu-school ko">인하대학교 · 인천 · 2019 – 2023</div><div class="edu-school en">Inha University · Incheon · 2019 – 2023</div>
+        <div class="edu-metas"><span class="em em-red">GPA 3.5 / 4.5</span></div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree ko">한국어 집중 과정 (어학당)</div><div class="edu-degree en">Korean Language Program</div>
+        <div class="edu-school ko">인하대학교 한국어교육원 · 인천 · 2018 – 2019</div><div class="edu-school en">Inha University Korean Language Institute · Incheon · 2018 – 2019</div>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="sub-kicker ko">장학금 & 수상</div><div class="sub-kicker en">AWARDS & SCHOLARSHIPS</div>
+      <div class="aw-item"><span class="aw-year">25–26</span><div><div class="aw-name ko">BK21 연구장학금 (스마트제조)</div><div class="aw-name en">BK21 Research Scholarship</div><div class="aw-org ko">한국연구재단</div><div class="aw-org en">National Research Foundation of Korea</div></div></div>
+      <div class="aw-item"><span class="aw-year">2025</span><div><div class="aw-name ko">외국인특별장학금</div><div class="aw-name en">International Special Scholarship</div><div class="aw-org">Yonsei University</div></div></div>
+      <div class="aw-item"><span class="aw-year">2024</span><div><div class="aw-name ko">국제공동연구장학금</div><div class="aw-name en">International Joint Research Scholarship</div><div class="aw-org">Yonsei University</div></div></div>
+      <div class="aw-item"><span class="aw-year">2024–</span><div><div class="aw-name">GSRA <span class="ko">(혁신재학조교장학금)</span><span class="en">(Graduate Research Scholarship)</span></div><div class="aw-org">Yonsei University</div></div></div>
+      <div class="aw-item"><span class="aw-year">2024</span><div><div class="aw-name ko">우수 외국인 장학금</div><div class="aw-name en">Outstanding Intl. Student Award</div><div class="aw-org">Yonsei University</div></div></div>
+      <div class="aw-item"><span class="aw-year">2022</span><div><div class="aw-name ko">성적우수 전액장학금</div><div class="aw-name en">Academic Excellence Full Scholarship</div><div class="aw-org">Inha University</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="contact-inner reveal">
+    <div class="contact-big ko">함께<br>만들어<br><em>봐요.</em></div>
+    <div class="contact-big en">Let's<br><em>build.</em></div>
+    <p class="contact-desc ko">해외영업, 무역, 공급망, 글로벌 비즈니스 관련 기회에 열려 있습니다. 한국어 또는 영어로 편하게 연락해 주세요.</p>
+    <p class="contact-desc en">Open to opportunities in global sales, trade, supply chain, and international business. Reach out in Korean or English — both are equally welcome.</p>
+    <div class="contact-links">
+      <a href="mailto:Sarvarb808@gmail.com" class="clink cr">✉ &nbsp;Sarvarb808@gmail.com</a>
+      <a href="https://github.com/SarvarbekBotirov" target="_blank" class="clink">GitHub</a>
+      <a href="https://linkedin.com/in/sarvarbek-botirov" target="_blank" class="clink">LinkedIn</a>
+      <a href="resume-ko.pdf" download class="clink cr ko">↓ &nbsp;이력서 다운로드</a>
+      <a href="resume-en.pdf" download class="clink cr en">↓ &nbsp;Resume PDF</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong class="ko">사르바르벡 보티로프</strong>
+  <strong class="en">Sarvarbek Botirov</strong>
+  <span>Seoul, South Korea · © 2026</span>
+  <span>Eager to learn, solve problems, and create value.</span>
+</footer>
+
+<script>
+function toggleLang() {
+  const html = document.documentElement;
+  const btn  = document.getElementById('langBtn');
+  const toEn = html.getAttribute('lang') === 'ko';
+  html.setAttribute('lang', toEn ? 'en' : 'ko');
+  btn.textContent = toEn ? '한' : 'EN';
+  document.title  = toEn ? 'Sarvarbek Botirov — Portfolio' : '사르바르벡 보티로프 — 포트폴리오';
+}
+
+const io = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
+  { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const navAs = document.querySelectorAll('.nav-menu a');
+const secs  = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+  navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
+</script>
+</body>
+</html>
